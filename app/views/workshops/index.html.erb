@@ -1,0 +1,19 @@
+<div class="col-lg-12">
+<h3 class="mt-4 mb-4">Listing WorkShops</h3>
+  <div class="row">
+    <% @workshops.each do |workshop| %>
+      <div class="col-lg-6">
+        <div class= "card shadow mb-3 mt-2">
+          <div class="card-body ">
+          <h4 class="card-title"><%=workshop.name%></h4>
+          <p class="lead"> <%= workshop.description %></p>
+          <h4 > <span class= "badge bg-primary">From <%= workshop.start_date %> to <%= workshop.end_date %></span> </h4>
+          <h4 > <span class= "badge bg-primary">Everyday From <%= workshop.start_time %> to <%= workshop.end_time %></span> </h4>
+
+          <%= link_to "view_details", workshop, class: "btn btn-danger btn-lg"%>
+          </div>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>

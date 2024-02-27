@@ -1,0 +1,14 @@
+<div class="col-lg-6">
+  <div class= "card shadow mb-3 mt-2">
+    <div class="card-body ">
+    <h4 class="card-title"><%= @workshop.name%></h4>
+    <p class="lead"> <%= @workshop.description %></p>
+    <h4 > <span class= "badge bg-primary">From <%= @workshop.start_date %> to <%= @workshop.end_date %></span> </h4>
+    <h4 > <span class= "badge bg-primary">Everyday From <%= @workshop.start_time %> to <%= @workshop.end_time %></span> </h4>
+     <h4 > <span class= "badge bg-primary"> total_seats: <%= @workshop.total_seats %></span> </h4>
+    <h4 > <span class= "badge bg-primary">remaining_seats: <%= @workshop.remaining_seats %></span> </h4>
+    <h3 > <span class= "badge bg-success">registration_fee: <%= @workshop.registration_fee %></span> </h4>
+
+    </div>
+  </div>
+</div>
