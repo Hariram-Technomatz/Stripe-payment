@@ -16,11 +16,11 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_26_133042) do
     t.float "amount_paid"
     t.string "stripe_transaction_id"
     t.integer "customer_id", null: false
-    t.integer "warkshop_id", null: false
+    t.integer "workshop_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["customer_id"], name: "index_bookings_on_customer_id"
-    t.index ["warkshop_id"], name: "index_bookings_on_warkshop_id"
+    t.index ["workshop_id"], name: "index_bookings_on_workshop_id"
   end
 
   create_table "customers", force: :cascade do |t|
@@ -47,5 +47,5 @@ ActiveRecord::Schema[7.0].define(version: 2024_02_26_133042) do
   end
 
   add_foreign_key "bookings", "customers"
-  add_foreign_key "bookings", "warkshops"
+  add_foreign_key "bookings", "workshops"
 end
