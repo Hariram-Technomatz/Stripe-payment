@@ -12,3 +12,58 @@
     </div>
   </div>
 </div>
+<div class= "col-lg-4 mt-4">
+<div class="card shadow mb-3">
+<div class="card-body">
+ <h4 class="card-tittle mb-2"> Reserve your seat now!!</h4>
+  <%= form_with url: :bookings, data: {turbo: false} do |form| %>
+  <%= form.hidden_field :workshop_id, value: @workshop.id%>
+ <div class= "form-group">
+    <%= form.label :full_name, class: "mb-2 mt-2" %>
+    <%= form.text_field :full_name, class: "form-control", require: true %>
+ </div>
+ <div class= "form-group">
+    <%= form.label :email, class: "mb-2 mt-2" %>
+    <%= form.text_field :email, class: "form-control", require: true %>
+ </div>
+ <div class= "form-group">
+    <%= form.label :contact_number, class: "mb-2 mt-2" %>
+    <%= form.text_field :contact_number, class: "form-control", require: true %>
+ </div>
+ <div class= "form-group">
+    <%= form.label :no_of_seats_you_want_to_book, class: "mb-2 mt-2" %>
+    <%= form.number_field :no_of_tickets, class: "form-control", require: true, min: 1, max:@workshop.remaining_seats %>
+ </div>
+ <h4 class="mt-4 mb-3"> Card Details!!</h4>
+  <div class= "form-group">
+    <%= form.label :card_number, class: "mb-2 mt-2" %>
+    <%= form.text_field :card_number, class: "form-control", require: true %>
+  </div>
+
+ <div class="row">
+  <div class="col-lg-3">
+    <div class= "form-group">
+      <%= form.label :cvv, class: "mb-2 mt-2" %>
+      <%= form.text_field :cvv, class: "form-control", require: true, maxlength:3 %>
+    </div>
+  </div>
+   <div class="col-lg-3">
+    <div class= "form-group">
+      <%= form.label :month, class: "mb-2 mt-2" %>
+      <%= form.text_field :exp_month, class: "form-control", require: true, min:1, max:12 %>
+    </div>
+  </div>
+   <div class="col-lg-3">
+    <div class= "form-group">
+      <%= form.label :year, class: "mb-2 mt-2" %>
+      <%= form.text_field :exp_year, class: "form-control", require: true, min:2024, max:2028 %>
+    </div>
+  </div>
+ </div>
+ <div class="d-grid gap-2">
+  <%= form.submit "Book Now", class: "btn btn-outline-danger btn-lg mt-3"%>
+ </div>
+
+<%end%>
+</div>
+<div>
